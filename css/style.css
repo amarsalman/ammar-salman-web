@@ -1,0 +1,123 @@
+:root{
+    --bg: #0f172a;
+    --panel: #020617;
+    --accent: #38bdf8;
+    --muted: #94a3b8;
+}
+
+* { box-sizing: border-box; }
+html,body { height:100%; }
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    background: var(--bg);
+    color: #fff;
+    line-height: 1.6;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+header {
+    background: var(--panel);
+    padding: 12px 16px;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+.header-inner {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap: 12px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.brand {
+    margin: 0;
+    font-size: 1.05rem;
+    color: #fff;
+}
+
+.menu-toggle {
+    font-size: 20px;
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.nav-menu {
+    display: none;
+    position: absolute;
+    right: 16px;
+    top: 60px;
+    background: rgba(2,6,23,0.96);
+    padding: 12px;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(2,6,23,0.6);
+    min-width: 160px;
+}
+
+.nav-menu a {
+    color: white;
+    display: block;
+    margin: 6px 0;
+    text-decoration: none;
+    padding: 6px 8px;
+    border-radius: 4px;
+}
+
+.nav-menu a:hover {
+    background: rgba(255,255,255,0.02);
+}
+
+.nav-link.active {
+    color: var(--accent);
+}
+
+@media (min-width: 720px) {
+    .menu-toggle { display: none; }
+    .nav-menu {
+        display: flex !important;
+        position: static;
+        background: transparent;
+        padding: 0;
+        gap: 18px;
+        box-shadow: none;
+    }
+
+    .nav-menu a { margin: 0; padding: 4px 6px; }
+}
+
+main {
+    max-width: 1100px;
+    margin: 28px auto;
+    padding: 0 16px;
+}
+
+.section {
+    background: rgba(255,255,255,0.02);
+    padding: 18px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 10px rgba(2,6,23,0.4);
+}
+
+h1, h2, h3 { margin: 0 0 8px 0; color: #fff; }
+p { color: var(--muted); margin: 0 0 8px 0; }
+
+footer {
+    text-align: center;
+    padding: 18px 8px;
+    color: var(--muted);
+    border-top: 1px solid rgba(255,255,255,0.02);
+    margin-top: 32px;
+}
+
+.nav-menu.active { display: block; }
